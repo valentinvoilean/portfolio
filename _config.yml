@@ -1,13 +1,18 @@
 title: Valentin-Marian Voilean
-email: contact@valentinvoilean.com
-description: >
-  Valentin-Marian Voilean portfolio
-baseurl: "" # the subpath of your site, e.g. /blog
+locale: en_US
 url: "http://valentinvoilean.com"
+email: contact@valentinvoilean.com
+description: Valentin-Marian Voilean portfolio
+
 github_username:  valentinvoilean
 
+permalink:   /:categories/:title/
 markdown: kramdown
-theme: minima
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
 plugins:
   - jekyll-feed
 
