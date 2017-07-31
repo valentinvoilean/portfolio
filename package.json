@@ -14,5 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "normalize-scss": "^7.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "eslint": "^4.3.0",
+    "webpack": "^3.4.1"
   }
 }
