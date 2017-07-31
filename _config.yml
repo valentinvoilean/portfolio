@@ -9,9 +9,6 @@ github_username:  valentinvoilean
 permalink:   /:categories/:title/
 markdown: kramdown
 
-destination: public
-source: src
-
 sass:
   sass_dir: _sass
   style: compressed
