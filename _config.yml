@@ -7,7 +7,7 @@ url: "http://valentinvoilean.com"
 github_username:  valentinvoilean
 
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
 
