@@ -11,5 +11,8 @@
     "url": "git@github:valentinvoilean/portfolio.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "normalize-scss": "^7.0.0"
+  }
 }
