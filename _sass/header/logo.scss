@@ -1,0 +1,119 @@
+@keyframes squareEnter {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+    width: 35px;
+  }
+  100% {
+    transform: rotate(0deg);
+    width: 70px;
+  }
+}
+
+@keyframes squareOut {
+  0% {
+    transform: rotate(0deg);
+    width: 100px;
+  }
+  50% {
+    transform: rotate(0deg);
+    width: 35px;
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes resizeIn {
+  0% {
+    max-width: 0;
+  }
+
+  100% {
+    max-width: 100px;
+  }
+}
+
+@keyframes resizeOut {
+  0% {
+    max-width: 100px;
+  }
+
+  100% {
+    max-width: 0;
+  }
+}
+
+.logo {
+  height: 35px;
+  width: 35px;
+  color: $pure-white;
+  margin-top: 20px;
+  margin-left: 50px;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+
+  &.enter {
+    transition: opacity .4s;
+    opacity: 1;
+  }
+
+  &-square {
+    transform: rotate(45deg);
+    height: 35px;
+    width: 35px;
+    outline: 2px solid $pure-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .enter & {
+      animation: squareEnter .4s forwards;
+    }
+
+    .leave & {
+      animation: squareOut .4s forwards;
+    }
+  }
+
+  &-first-letter {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  &-surname,
+  &-first-name {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    font-size: 10px;
+    max-width: 0;
+    overflow: hidden;
+
+    &:first-letter {
+      font-size: 0;
+    }
+
+    .enter & {
+      animation: resizeIn .2s forwards;
+      animation-delay: .2s;
+    }
+
+    .leave & {
+      animation: resizeOut .2s forwards;
+    }
+  }
+
+  &-surname {
+    top: 10px;
+    left: 30px;
+  }
+
+  &-first-name {
+    top: 21px;
+    left: 25px;
+  }
+}
