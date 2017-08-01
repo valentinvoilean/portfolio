@@ -5,4 +5,14 @@
   overflow: hidden;
 
   background: url(../img/cetate.jpg) no-repeat fixed 50% 50%/cover;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: rgba(0,0,0,.5);
+  }
 }
