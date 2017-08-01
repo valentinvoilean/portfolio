@@ -6,7 +6,7 @@
   background: url(../img/cetate_small.jpg) no-repeat fixed 50% 50%/cover;
 
   @include susy-breakpoint($bsm) {
-    background: url(../img/cetate.jpg) no-repeat fixed 50% 50%/cover;
+    background: url(../img/cetate_big.jpg) no-repeat fixed 50% 50%/cover;
   }
 
   &:after {
