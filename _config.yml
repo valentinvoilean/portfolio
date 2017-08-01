@@ -16,10 +16,10 @@ sass:
 plugins_dir:
   - jekyll-feed
 
-gems:
-  - normalize-scss
-  - susy
-  
+gems: [normalize-scss, susy]
+
+
+
 exclude:
   - Gemfile
   - Gemfile.lock
