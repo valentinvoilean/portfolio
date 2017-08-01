@@ -4,6 +4,27 @@ main {
   height: 100%;
 }
 
+.container {
+  @include container($lxs);
+
+  @include susy-breakpoint($bsm, $lsm) {
+    @include container($lsm);
+    max-width: 100%;
+  }
+
+  @include susy-breakpoint($bmd, $lmd) {
+    @include container($lmd);
+  }
+
+  @include susy-breakpoint($blg, $llg) {
+    @include container($llg);
+  }
+
+  @include susy-breakpoint($bxl, $lxl) {
+    @include container($lxl);
+  }
+}
+
 .site-header {
   @include z($zelements, header);
   width: 100%;

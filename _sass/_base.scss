@@ -1,22 +1,6 @@
 // run the normalization script
 @include normalize();
 
-// Generate the grid container
-@each $breakpoint, $value in $breakpoints {
-  $mq: map-get($breakpoints, $breakpoint);
-  $l: map-get($layouts, $breakpoint);
-
-  @include susy-breakpoint($mq, $l) {
-    .container {
-      @include container($l);
-
-      @if $mq != 0 {
-        max-width: 100%;
-      }
-    }
-  }
-}
-
 /**
   Z-Index Management For Complex Layouts
   Usage: @include z($zelements, modals);

@@ -1,17 +1,13 @@
 // Breakpoints
-$breakpoints: (
-  xs: 0,
-  sm: 768px,
-  md: 1024px,
-  lg: 1440px,
-  xl: 1880px,
-);
+$bxs: 0;
+$bsm: 768px;
+$bmd: 1024px;
+$blg: 1440px;
+$bxl: 1880px;
 
 // Layouts
-$layouts: (
-  xs: layout(540px 12 .5 inside fluid isolate),
-  sm: layout(12 static (35px 25px) inside),
-  md: layout(12 static (55px 25px) inside),
-  lg: layout(12 static (70px 30px) inside),
-  xl: layout(12 static (110px 40px) inside)
-);
+$lxs: layout(540px 12 .5 inside fluid isolate);
+$lsm: layout(12 static (35px 25px) inside);
+$lmd: layout(12 static (55px 25px) inside);
+$llg: layout(12 static (70px 30px) inside);
+$lxl: layout(12 static (110px 40px) inside);
