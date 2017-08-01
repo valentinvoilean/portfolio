@@ -1,0 +1,9 @@
+.home-gallery {
+  @include z($zelements, header);
+  height: 100%;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+
+  background: url(../img/cetate.jpg) no-repeat fixed 50% 50%/cover;
+}

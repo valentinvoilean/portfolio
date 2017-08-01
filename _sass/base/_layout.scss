@@ -1,0 +1,19 @@
+html,
+body,
+main {
+  height: 100%;
+}
+
+.site-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.home {
+  height: 100%;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}

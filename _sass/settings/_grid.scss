@@ -1,5 +1,3 @@
-@import 'susy';
-
 // Breakpoints
 $breakpoints: (
   xs: 0,
@@ -17,19 +15,3 @@ $layouts: (
   lg: layout(12 static (70px 30px) inside),
   xl: layout(12 static (110px 40px) inside)
 );
-
-// Generate the container
-@each $breakpoint, $value in $breakpoints {
-  $mq: map-get($breakpoints, $breakpoint);
-  $l: map-get($layouts, $breakpoint);
-
-  @include susy-breakpoint($mq, $l) {
-    .container {
-      @include container($l);
-
-      @if $mq != 0 {
-        max-width: 100%;
-      }
-    }
-  }
-}
