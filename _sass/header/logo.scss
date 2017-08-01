@@ -1,51 +1,3 @@
-@keyframes squareEnter {
-  0% {
-    transform: rotate(45deg);
-  }
-  50% {
-    transform: rotate(0deg);
-    width: 35px;
-  }
-  100% {
-    transform: rotate(0deg);
-    width: 70px;
-  }
-}
-
-@keyframes squareOut {
-  0% {
-    transform: rotate(0deg);
-    width: 100px;
-  }
-  50% {
-    transform: rotate(0deg);
-    width: 35px;
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes resizeIn {
-  0% {
-    max-width: 0;
-  }
-
-  100% {
-    max-width: 100px;
-  }
-}
-
-@keyframes resizeOut {
-  0% {
-    max-width: 100px;
-  }
-
-  100% {
-    max-width: 0;
-  }
-}
-
 .logo {
   height: 35px;
   width: 35px;
@@ -56,11 +8,6 @@
   position: relative;
   opacity: 0.8;
 
-  &.enter {
-    transition: opacity .4s;
-    opacity: 1;
-  }
-
   &-square {
     transform: rotate(45deg);
     height: 35px;
@@ -69,14 +16,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    .enter & {
-      animation: squareEnter .4s forwards;
-    }
-
-    .leave & {
-      animation: squareOut .4s forwards;
-    }
   }
 
   &-first-letter {
@@ -86,8 +25,8 @@
 
   &-surname,
   &-first-name {
-    display: flex;
-    flex-direction: row-reverse;
+    display: inline-block;
+    text-align: right;
     position: absolute;
     font-size: 10px;
     max-width: 0;
@@ -95,15 +34,6 @@
 
     &:first-letter {
       font-size: 0;
-    }
-
-    .enter & {
-      animation: resizeIn .2s forwards;
-      animation-delay: .2s;
-    }
-
-    .leave & {
-      animation: resizeOut .2s forwards;
     }
   }
 
@@ -115,5 +45,39 @@
   &-first-name {
     top: 21px;
     left: 25px;
+  }
+
+  &.enter {
+    transition: opacity .2s;
+    opacity: 1;
+
+    .logo-square {
+      transform: rotate(0deg);
+      width: 70px;
+      transition: transform .2s, width .2s .2s;
+    }
+
+    .logo-surname,
+    .logo-first-name {
+      max-width: 100px;
+      transition: max-width .2s .2s;
+    }
+  }
+
+  &.leave {
+    transition: opacity .2s;
+    opacity: 0.8;
+
+    .logo-square {
+      transform: rotate(45deg);
+      width: 35px;
+      transition: width .2s, transform .2s .2s;
+    }
+
+    .logo-surname,
+    .logo-first-name {
+      max-width: 0;
+      transition: max-width .2s;
+    }
   }
 }
