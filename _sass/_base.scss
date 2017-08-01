@@ -1,9 +1,6 @@
 // run the normalization script
 @include normalize();
 
-// load the layout styles
-@import "base/layout";
-
 // Generate the grid container
 @each $breakpoint, $value in $breakpoints {
   $mq: map-get($breakpoints, $breakpoint);
@@ -25,4 +22,7 @@
   Usage: @include z($zelements, modals);
  */
 $zelements: header;
+
+// load the layout styles
+@import "base/layout";
 

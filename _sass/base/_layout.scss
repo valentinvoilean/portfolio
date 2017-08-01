@@ -5,6 +5,7 @@ main {
 }
 
 .site-header {
+  @include z($zelements, header);
   width: 100%;
   position: fixed;
   top: 0;
