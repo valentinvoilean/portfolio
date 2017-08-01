@@ -3,4 +3,6 @@
 ---
 
 @import "normalize";
+@include normalize();
+
 @import "grid";

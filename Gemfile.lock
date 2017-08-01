@@ -166,6 +166,8 @@ GEM
     net-dns (0.8.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    normalize-scss (7.0.0)
+      sass (~> 3.3)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.14.0)
@@ -197,6 +199,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.6)
+  normalize-scss (~> 7.0)
   susy (~> 2.2, >= 2.2.12)
   tzinfo-data
 

@@ -12,9 +12,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "normalize-scss": "^7.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^6.23.0",
     "eslint": "^4.3.0",
