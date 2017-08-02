@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --watch --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.2.1",
     "normalize-scss": "^7.0.0",
     "susy": "2.2.12"
   },
   "devDependencies": {
     "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-airbnb": "^2.4.0",
     "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "progress-bar-webpack-plugin": "^1.10.0",
     "webpack": "^3.4.1"
   }
 }
