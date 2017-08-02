@@ -15,7 +15,7 @@ $(document).ready(() => {
   });
 });
 
-$(window).load(() => {
+$(window).on('load', () => {
   loadState.windowLoad.forEach(instance => {
     instance.init();
   });
