@@ -12,7 +12,13 @@ export default class Logo {
   }
 
   destroy() {
+    const { enter, leave } = classNames;
+
     this.removeEventListeners();
+
+    this.$logo
+      .removeClass(leave)
+      .removeClass(enter);
   }
 
   addEventListeners() {
@@ -24,6 +30,10 @@ export default class Logo {
       },
       mouseleave() {
         $(this).addClass(leave).removeClass(enter);
+
+        setTimeout(() => {
+          $(this).removeClass(leave);
+        }, 600);
       }
     });
   }

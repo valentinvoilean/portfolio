@@ -9,6 +9,11 @@
   opacity: 0.8;
   cursor: pointer;
 
+  @include susy-breakpoint($bsm) {
+    height: 50px;
+    width: 50px;
+  }
+
   &-square {
     transform: rotate(45deg);
     height: 35px;
@@ -17,11 +22,20 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    @include susy-breakpoint($bsm) {
+      height: 50px;
+      width: 50px;
+    }
   }
 
   &-first-letter {
     font-size: 30px;
     line-height: 38px;
+
+    @include susy-breakpoint($bsm) {
+      line-height: 50px;
+    }
   }
 
   &-surname,
@@ -37,16 +51,34 @@
     &:first-letter {
       font-size: 0;
     }
+
+    @include susy-breakpoint($bsm) {
+      font-size: 12px;
+
+      &:first-letter {
+        font-size: 0;
+      }
+    }
   }
 
   &-surname {
     top: 8px;
     left: 30px;
+
+    @include susy-breakpoint($bsm) {
+      top: 14px;
+      left: 37px;
+    }
   }
 
   &-first-name {
     top: 19px;
     left: 30px;
+
+    @include susy-breakpoint($bsm) {
+      top: 25px;
+      left: 37px;
+    }
   }
 
   &.enter {
@@ -57,6 +89,10 @@
       transform: rotate(0deg);
       width: 70px;
       transition: transform .2s, width .2s .2s;
+
+      @include susy-breakpoint($bsm) {
+        width: 88px;
+      }
     }
 
     .logo-surname,
@@ -74,6 +110,10 @@
       transform: rotate(45deg);
       width: 35px;
       transition: width .2s .2s, transform .2s .4s;
+
+      @include susy-breakpoint($bsm) {
+        width: 50px;
+      }
     }
 
     .logo-surname,
