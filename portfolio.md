@@ -1,8 +1,8 @@
 ---
-layout: page
-title: About
-navigation_weight: 2
-permalink: /about/
+layout: portfolio
+title: Portfolio
+navigation_weight: 3
+permalink: /portfolio/
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
