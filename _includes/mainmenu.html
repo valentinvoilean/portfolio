@@ -1,4 +1,9 @@
 <nav class="mainmenu">
+  <div class="hamburger hamburger--vortex mainmenu-hamburger">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
   <ul>
     {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
     {% for p in navigation_pages %}

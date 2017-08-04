@@ -1868,6 +1868,10 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+hamburgers@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/hamburgers/-/hamburgers-0.9.1.tgz#49bc3bca667a693a8458388c9ef265ae611348d5"
+
 har-schema@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/har-schema/-/har-schema-1.0.5.tgz#d263135f43307c02c602afc8fe95970c0151369e"

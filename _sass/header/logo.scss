@@ -3,7 +3,7 @@
   width: 35px;
   color: $pure-white;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 30px;
   text-align: center;
   position: relative;
   opacity: 0.8;
@@ -12,6 +12,7 @@
   @include susy-breakpoint($bsm) {
     height: 50px;
     width: 50px;
+    margin-left: 50px;
   }
 
   &-square {

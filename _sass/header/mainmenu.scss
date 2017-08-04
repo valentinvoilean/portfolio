@@ -3,11 +3,24 @@
   font-size: 12px;
   text-transform: uppercase;
   position: absolute;
-  right: 50px;
-  top: 20px;
+  right: 10px;
+  top: 14px;
+
+  @include susy-breakpoint($bsm) {
+    top: 20px;
+  }
+
+  @include susy-breakpoint($bmd) {
+    right: 50px;
+  }
 
   ul {
     list-style: none;
+    display: none;
+
+    @include susy-breakpoint($bmd) {
+      display: block;
+    }
   }
 
   li {
@@ -43,5 +56,13 @@
         max-width: 100%;
       }
     }
+  }
+}
+
+.mainmenu-hamburger {
+  $hamburger-layer-color: rgba($pure-white, 0.4);
+
+  @include susy-breakpoint($bmd) {
+    display: none;
   }
 }
