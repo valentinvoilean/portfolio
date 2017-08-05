@@ -1,3 +1,7 @@
-export { default as Logo } from './Logo';
-export { default as MainMenu } from './MainMenu';
+import Logo from './Logo';
+import MainMenu from './MainMenu';
 
+export default {
+  documentReady: [Logo, MainMenu],
+  windowLoad: []
+};

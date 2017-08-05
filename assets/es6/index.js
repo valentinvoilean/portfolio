@@ -1,20 +1,15 @@
-import { Logo, MainMenu } from './components';
-
-const loadState = {
-  documentReady: [Logo, MainMenu],
-  windowLoad: []
-};
+import components from './components';
 
 const instances = [];
 
 $(document).ready(() => {
-  loadState.documentReady.forEach(Component => {
+  components.documentReady.forEach(Component => {
     instances.push(new Component());
   });
 });
 
 $(window).on('load', () => {
-  loadState.windowLoad.forEach(Component => {
+  components.windowLoad.forEach(Component => {
     instances.push(new Component());
   });
 });
