@@ -5,7 +5,7 @@
   Z-Index Management For Complex Layouts
   Usage: @include z($zelements, modals);
  */
-$zelements: header;
+$zelements: header, layer, mainmenu;
 
 // load the layout styles
 @import "base/layout";

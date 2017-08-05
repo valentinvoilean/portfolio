@@ -1,5 +1,5 @@
 ---
-layout: portfolio
+layout: default
 title: Portfolio
 navigation_weight: 3
 permalink: /portfolio/

@@ -14,13 +14,16 @@
     right: 50px;
   }
 
-  ul {
-    list-style: none;
+  nav {
     display: none;
 
     @include susy-breakpoint($bmd) {
       display: block;
     }
+  }
+
+  ul {
+    list-style: none;
   }
 
   li {
@@ -60,9 +63,20 @@
 }
 
 .mainmenu-hamburger {
-  $hamburger-layer-color: rgba($pure-white, 0.4);
+  position: relative;
+  @include z($zelements, mainmenu);
 
   @include susy-breakpoint($bmd) {
     display: none;
   }
+}
+
+.mainmenu-invisible-layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include z($zelements, header);
 }

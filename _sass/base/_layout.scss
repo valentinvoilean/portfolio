@@ -30,6 +30,10 @@ a {
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .site-header {
   @include z($zelements, header);
   width: 100%;

@@ -4,31 +4,39 @@ export default class MainMenu {
   static loadState = 'documentReady';
 
   constructor() {
-    const { hamburger, navigation } = selectors;
+    const { hamburger, navigation, layer } = selectors;
     this.$hamburger = $(hamburger);
     this.$navigation = $(navigation);
+    this.$layer = $(layer);
 
     this.addEventListeners();
   }
 
   destroy() {
-    const { isActive } = classNames;
+    const { isActive, noScroll } = classNames;
 
     this.removeEventListeners();
 
+    this.$navigation.removeAttr('styles');
     this.$hamburger.removeClass(isActive);
+    $('body').removeClass(noScroll);
   }
 
   addEventListeners() {
-    const { isActive } = classNames;
+    const { isActive, noScroll } = classNames;
 
-    this.$hamburger.click(() => {
+    this.$hamburger.add(this.$layer).click((e) => {
+      e.stopPropagation();
+
+      this.$layer.toggle();
+      this.$navigation.toggle();
       this.$hamburger.toggleClass(isActive);
+      $('body').toggleClass(noScroll);
     });
   }
 
   removeEventListeners() {
-    this.$hamburger.off('click');
+    this.$hamburger.add(this.$layer).off('click');
   }
 }
 
