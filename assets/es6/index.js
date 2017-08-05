@@ -5,19 +5,19 @@ const loadState = {
   windowLoad: []
 };
 
-Object.values(Components).forEach(ComponentClass => {
-  loadState[ComponentClass.loadState].push(new ComponentClass());
-});
-
 $(document).ready(() => {
-  loadState.documentReady.forEach(instance => {
-    instance.init();
+  Object.values(Components).forEach(ComponentClass => {
+    if (ComponentClass.loadState === 'documentReady') {
+      loadState.documentReady.push(new ComponentClass());
+    }
   });
 });
 
 $(window).on('load', () => {
-  loadState.windowLoad.forEach(instance => {
-    instance.init();
+  Object.values(Components).forEach(ComponentClass => {
+    if (ComponentClass.loadState === 'windowLoad') {
+      loadState.windowLoad.push(new ComponentClass());
+    }
   });
 });
 

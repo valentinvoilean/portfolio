@@ -5,9 +5,7 @@ export default class Logo {
 
   constructor() {
     this.$logo = $(selectors.logo);
-  }
 
-  init() {
     this.addEventListeners();
   }
 

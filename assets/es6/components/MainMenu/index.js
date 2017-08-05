@@ -4,10 +4,10 @@ export default class MainMenu {
   static loadState = 'documentReady';
 
   constructor() {
-    this.$hamburger = $(selectors.hamburger);
-  }
+    const { hamburger, navigation } = selectors;
+    this.$hamburger = $(hamburger);
+    this.$navigation = $(navigation);
 
-  init() {
     this.addEventListeners();
   }
 
