@@ -1,7 +1,8 @@
 import Logo from './Logo';
 import MainMenu from './MainMenu';
+import MediaQueries from './MediaQueries';
 
 export default {
-  documentReady: [Logo, MainMenu],
+  documentReady: [MediaQueries, Logo, MainMenu],
   windowLoad: []
 };

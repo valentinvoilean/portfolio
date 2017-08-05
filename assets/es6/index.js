@@ -1,16 +1,17 @@
 import components from './components';
 
-window.instances = [];
+window.info = window.info || {};
+window.info.instances = [];
 
 $(document).ready(() => {
   components.documentReady.forEach(Component => {
-    window.instances.push(new Component());
+    window.info.instances.push(new Component());
   });
 });
 
 $(window).on('load', () => {
   components.windowLoad.forEach(Component => {
-    window.instances.push(new Component());
+    window.info.instances.push(new Component());
   });
 });
 
