@@ -1,22 +1,28 @@
 import { classNames, selectors } from './config';
 
 export default class Logo {
-  static loadState = 'documentReady';
-
   constructor() {
     this.$logo = $(selectors.logo);
 
+    if (this.$logo) {
+      this.init();
+    }
+  }
+
+  init() {
     this.addEventListeners();
   }
 
   destroy() {
-    const { enter, leave } = classNames;
+    if (this.$logo) {
+      const { enter, leave } = classNames;
 
-    this.removeEventListeners();
+      this.removeEventListeners();
 
-    this.$logo
-      .removeClass(leave)
-      .removeClass(enter);
+      this.$logo
+        .removeClass(leave)
+        .removeClass(enter);
+    }
   }
 
   addEventListeners() {

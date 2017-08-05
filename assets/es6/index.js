@@ -1,23 +1,21 @@
-import * as Components from './components';
+import { Logo, MainMenu } from './components';
 
 const loadState = {
-  documentReady: [],
+  documentReady: [Logo, MainMenu],
   windowLoad: []
 };
 
+const instances = [];
+
 $(document).ready(() => {
-  Object.values(Components).forEach(ComponentClass => {
-    if (ComponentClass.loadState === 'documentReady') {
-      loadState.documentReady.push(new ComponentClass());
-    }
+  loadState.documentReady.forEach(Component => {
+    instances.push(new Component());
   });
 });
 
 $(window).on('load', () => {
-  Object.values(Components).forEach(ComponentClass => {
-    if (ComponentClass.loadState === 'windowLoad') {
-      loadState.windowLoad.push(new ComponentClass());
-    }
+  loadState.windowLoad.forEach(Component => {
+    instances.push(new Component());
   });
 });
 
