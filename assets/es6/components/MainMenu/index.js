@@ -1,48 +1,53 @@
-import { classNames, selectors } from './config';
+import Mobile from './MainMenu.mobile';
+import Desktop from './MainMenu.desktop';
 
-export default class MainMenu {
+export default class CurrenciesComponent {
   constructor() {
-    const { hamburger, navigation, layer } = selectors;
-    this.$hamburger = $(hamburger);
-    this.$navigation = $(navigation);
-    this.$layer = $(layer);
-
-    if (this.$hamburger) {
-      this.init();
-    }
-  }
-
-  init() {
-    this.addEventListeners();
+    this._addMediaQueryCallbacks();
+    this._checkCurrentBreakpoint();
   }
 
   destroy() {
-    if (this.$hamburger) {
-      const { isActive, noScroll } = classNames;
+    this._removeMediaQueryCallbacks();
+    if (this.instance) {
+      this.instance.destroy();
+    }
+    this.instance = null;
+  }
 
-      this.removeEventListeners();
+  _addMediaQueryCallbacks() {
+    $(window).on('smMax', $.proxy(this._onChangedToMobile, this));
+    $(window).on('mdMin', $.proxy(this._onChangedToDesktop, this));
+  }
 
-      this.$navigation.removeAttr('styles');
-      this.$hamburger.removeClass(isActive);
-      $('body').removeClass(noScroll);
+  _removeMediaQueryCallbacks() {
+    $(window).off('smMax', $.proxy(this._onChangedToMobile.bind(this)));
+    $(window).off('mdMin', $.proxy(this._onChangedToDesktop.bind(this)));
+  }
+
+  _checkCurrentBreakpoint() {
+    if (
+      window.info &&
+      window.info.matchedMediaQueries &&
+      window.info.matchedMediaQueries.indexOf('smMax') > -1
+    ) {
+      this._onChangedToMobile();
+    } else {
+      this._onChangedToDesktop();
     }
   }
 
-  addEventListeners() {
-    const { isActive, noScroll } = classNames;
-
-    this.$hamburger.add(this.$layer).click((e) => {
-      e.stopPropagation();
-
-      this.$layer.toggle();
-      this.$navigation.toggle();
-      this.$hamburger.toggleClass(isActive);
-      $('body').toggleClass(noScroll);
-    });
+  _onChangedToDesktop() {
+    if (this.instance) {
+      this.instance.destroy();
+    }
+    this.instance = new Desktop();
   }
 
-  removeEventListeners() {
-    this.$hamburger.add(this.$layer).off('click');
+  _onChangedToMobile() {
+    if (this.instance) {
+      this.instance.destroy();
+    }
+    this.instance = new Mobile();
   }
 }
-

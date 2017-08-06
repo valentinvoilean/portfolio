@@ -10,14 +10,14 @@ export default class Logo {
   }
 
   init() {
-    this.addEventListeners();
+    this._addEventListeners();
   }
 
   destroy() {
     if (this.$logo) {
       const { enter, leave } = classNames;
 
-      this.removeEventListeners();
+      this._removeEventListeners();
 
       this.$logo
         .removeClass(leave)
@@ -25,7 +25,7 @@ export default class Logo {
     }
   }
 
-  addEventListeners() {
+  _addEventListeners() {
     const { enter, leave } = classNames;
 
     this.$logo.on({
@@ -42,7 +42,7 @@ export default class Logo {
     });
   }
 
-  removeEventListeners() {
+  _removeEventListeners() {
     this.$logo.off('mouseenter mouseleave');
   }
 }
