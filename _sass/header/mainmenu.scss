@@ -1,6 +1,5 @@
 .mainmenu {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 12px;
   text-transform: uppercase;
   position: absolute;
   right: 10px;
@@ -16,19 +15,36 @@
 
   nav {
     display: none;
+    @include z($zelements, mainmenu);
+    position: absolute;
+    top: 40px;
+    right: 20px;
 
     @include susy-breakpoint($bmd) {
       display: block;
+      position: static;
     }
   }
 
   ul {
     list-style: none;
+    text-align: right;
+
+    @include susy-breakpoint($bmd) {
+      text-align: left;
+    }
   }
 
   li {
-    display: inline-block;
-    margin-left: 20px;
+    font-size: 16px;
+    margin-top: 30px;
+
+    @include susy-breakpoint($bmd) {
+      font-size: 12px;
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 0;
+    }
   }
 
   a {
@@ -63,7 +79,9 @@
 }
 
 .mainmenu-hamburger {
-  position: relative;
+  position: absolute;
+  right: 0;
+
   @include z($zelements, mainmenu);
 
   @include susy-breakpoint($bmd) {
@@ -79,4 +97,47 @@
   right: 0;
   bottom: 0;
   @include z($zelements, header);
+}
+
+.mainmenu-background {
+  display: block;
+  height: 0;
+  width: 0;
+  background-color: #fff;
+  position: absolute;
+  right: 29px;
+  top: 21px;
+  transition: all 0.4s ease;
+  overflow: visible;
+
+  &:after {
+    display: block;
+    height: 0;
+    width: 0;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.4s ease;
+    overflow: visible;
+    content: "";
+  }
+
+  .is-active ~ & {
+    height: 390px;
+    width: 390px;
+    right: -170px;
+    top: -40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+
+    &:after {
+      height: 390px;
+      width: 390px;
+      right: 10px;
+      top: -40px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.3);
+    }
+  }
 }
