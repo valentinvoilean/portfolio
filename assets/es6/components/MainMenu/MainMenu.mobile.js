@@ -25,7 +25,6 @@ export default class MainMenu {
       this._removeEventListeners();
 
       this.$layer.removeAttr('style');
-      this.$navigation.removeAttr('style');
       this.$hamburger.removeClass(isActive);
       $('body').removeClass(noScroll);
     }
@@ -44,7 +43,6 @@ export default class MainMenu {
     e.stopPropagation();
 
     this.$layer.toggle();
-    this.$navigation.toggle();
     this.$hamburger.toggleClass(isActive);
     $('body').toggleClass(noScroll);
   }
