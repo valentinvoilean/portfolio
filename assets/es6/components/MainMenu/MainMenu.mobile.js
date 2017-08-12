@@ -2,12 +2,12 @@ import { classNames, selectors } from './config';
 
 export default class MainMenu {
   constructor() {
-    const { hamburger, navigation, layer } = selectors;
+    const { hamburger, navigation } = selectors;
     this.$hamburger = $(hamburger);
     this.$navigation = $(navigation);
-    this.$layer = $(layer);
 
     this._handleHamburgerIconCLick = this._handleHamburgerIconCLick.bind(this);
+    this._hideMenu = this._hideMenu.bind(this);
 
     this.init();
   }
@@ -20,30 +20,31 @@ export default class MainMenu {
 
   destroy() {
     if (this.$hamburger) {
-      const { isActive, noScroll } = classNames;
+      const { isActive } = classNames;
 
       this._removeEventListeners();
-
-      this.$layer.removeAttr('style');
       this.$hamburger.removeClass(isActive);
-      $('body').removeClass(noScroll);
     }
   }
 
   _addEventListeners() {
-    this.$hamburger.add(this.$layer).click(this._handleHamburgerIconCLick);
+    this.$hamburger.on('click', this._handleHamburgerIconCLick);
+    $(window).on('click', this._hideMenu);
+    this.$navigation.on('click', e => e.stopPropagation());
   }
 
   _removeEventListeners() {
-    this.$hamburger.add(this.$layer).off('click');
+    this.$hamburger.add($(window)).off('click', this._handleHamburgerIconCLick);
+    $(window).off('click', this._hideMenu);
   }
 
   _handleHamburgerIconCLick(e) {
-    const { isActive, noScroll } = classNames;
     e.stopPropagation();
 
-    this.$layer.toggle();
-    this.$hamburger.toggleClass(isActive);
-    $('body').toggleClass(noScroll);
+    this.$hamburger.toggleClass(classNames.isActive);
+  }
+
+  _hideMenu() {
+    this.$hamburger.removeClass(classNames.isActive);
   }
 }

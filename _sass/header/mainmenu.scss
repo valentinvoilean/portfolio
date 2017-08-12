@@ -16,6 +16,7 @@
   ul {
     list-style: none;
     text-align: right;
+    display: inline-block;
     transition: transform .3s ease .3s;
 
     @include susy-breakpoint($bmd) {
@@ -131,7 +132,7 @@
     background-color: rgba(0,0,0,0.3);
 
     ul {
-      transform: translate3d(-190px, 70px, 0);
+      transform: translate3d(50px, 70px, 0);
     }
   }
 
