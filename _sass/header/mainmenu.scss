@@ -26,8 +26,8 @@
   }
 
   li {
-    font-size: 16px;
-    margin-top: 30px;
+    font-size: 14px;
+    margin-top: 25px;
 
     @include susy-breakpoint($bmd) {
       font-size: 12px;
@@ -132,7 +132,7 @@
     background-color: rgba(0,0,0,0.3);
 
     ul {
-      transform: translate3d(50px, 70px, 0);
+      transform: translate3d(60px, 70px, 0);
     }
   }
 
