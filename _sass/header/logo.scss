@@ -9,7 +9,7 @@
   opacity: 0.8;
   cursor: pointer;
 
-  @include susy-breakpoint($bsm) {
+  @include susy-breakpoint($bmd) {
     height: 45px;
     width: 45px;
     margin-top: 25px;
@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
 
-    @include susy-breakpoint($bsm) {
+    @include susy-breakpoint($bmd) {
       height: 45px;
       width: 45px;
     }
@@ -35,7 +35,7 @@
     font-size: 30px;
     line-height: 38px;
 
-    @include susy-breakpoint($bsm) {
+    @include susy-breakpoint($bmd) {
       line-height: 50px;
     }
   }
@@ -54,7 +54,7 @@
       font-size: 0;
     }
 
-    @include susy-breakpoint($bsm) {
+    @include susy-breakpoint($bmd) {
       font-size: 12px;
 
       &:first-letter {
@@ -67,7 +67,7 @@
     top: 8px;
     left: 30px;
 
-    @include susy-breakpoint($bsm) {
+    @include susy-breakpoint($bmd) {
       top: 14px;
       left: 37px;
     }
@@ -77,7 +77,7 @@
     top: 19px;
     left: 30px;
 
-    @include susy-breakpoint($bsm) {
+    @include susy-breakpoint($bmd) {
       top: 25px;
       left: 37px;
     }
@@ -92,7 +92,7 @@
       width: 70px;
       transition: transform .2s, width .2s .2s;
 
-      @include susy-breakpoint($bsm) {
+      @include susy-breakpoint($bmd) {
         width: 88px;
       }
     }
@@ -113,7 +113,7 @@
       width: 35px;
       transition: width .2s .2s, transform .2s .4s;
 
-      @include susy-breakpoint($bsm) {
+      @include susy-breakpoint($bmd) {
         width: 45px;
       }
     }
