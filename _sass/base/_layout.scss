@@ -14,19 +14,20 @@ a {
 
   @include susy-breakpoint($bsm, $lsm) {
     @include container($lsm);
+    width: 720px;
     max-width: 100%;
   }
 
   @include susy-breakpoint($bmd, $lmd) {
-    @include container($lmd);
+    width: 960px;
   }
 
   @include susy-breakpoint($blg, $llg) {
-    @include container($llg);
+    width: 1200px;
   }
 
   @include susy-breakpoint($bxl, $lxl) {
-    @include container($lxl);
+    width: 1800px;
   }
 }
 
