@@ -25,8 +25,8 @@
   }
 
   li {
-    font-size: 14px;
-    margin-top: 25px;
+    font-size: 16px;
+    margin-top: 30px;
 
     @include susy-breakpoint($bmd) {
       font-size: 12px;
@@ -100,10 +100,10 @@
   overflow: visible;
 
   .is-active ~ & {
-    height: 390px;
-    width: 390px;
-    right: -180px;
-    top: -50px;
+    height: 490px;
+    width: 490px;
+    right: -270px;
+    top: -20px;
     border-radius: 50%;
     background-color: rgba(0,0,0,0.5);
   }
@@ -123,15 +123,15 @@
   @include z($zelements, mainmenu);
 
   .is-active ~ & {
-    height: 390px;
-    width: 390px;
-    right: -170px;
-    top: -40px;
+    height: 490px;
+    width: 490px;
+    right: -240px;
+    top: -20px;
     border-radius: 50%;
     background-color: rgba(0,0,0,0.3);
 
     ul {
-      transform: translate3d(60px, 70px, 0);
+      transform: translate3d(90px, 80px, 0);
     }
   }
 
