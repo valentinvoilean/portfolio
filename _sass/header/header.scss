@@ -2,3 +2,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+.stickyHeader {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($pure-black, 0);
+  transition: background .4s;
+
+  @include z($zelements, header);
+
+  &.is-active {
+    background: rgba($pure-black, 0.9);
+  }
+}
