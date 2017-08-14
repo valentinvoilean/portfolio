@@ -1,9 +1,17 @@
+import inView from 'in-view';
+
+import { selectors } from './config';
+
 import Mobile from './Gallery.mobile';
 import Desktop from './Gallery.desktop';
 
 export default class Gallery {
   constructor() {
-    this._addMediaQueryCallbacks();
+    this.init();
+  }
+
+  init() {
+    this._addEventListeners();
     this._checkCurrentBreakpoint();
   }
 
@@ -13,6 +21,22 @@ export default class Gallery {
       this.instance.destroy();
     }
     this.instance = null;
+  }
+
+  _addEventListeners() {
+    inView.offset(100);
+    inView(selectors.gallery).on('exit', $.proxy(this._highlightHeader, this));
+    inView(selectors.gallery).on('enter', $.proxy(this._resetHeader, this));
+
+    this._addMediaQueryCallbacks();
+  }
+
+  _highlightHeader() {
+    console.log('highlight header');
+  }
+
+  _resetHeader() {
+    console.log('reset header');
   }
 
   _addMediaQueryCallbacks() {
