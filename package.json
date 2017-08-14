@@ -16,6 +16,7 @@
   "dependencies": {
     "es6-class-auto-bind": "^1.0.0",
     "hamburgers": "^0.9.1",
+    "in-view": "^0.6.1",
     "jquery": "^3.2.1",
     "normalize-scss": "^7.0.0",
     "susy": "2.2.12"
