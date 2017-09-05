@@ -4,7 +4,7 @@ export default class GalleryMobile {
   }
 
   init() {
-    console.log('gallery mobile');
+    // console.log('gallery mobile');
   }
 
   destroy() {}

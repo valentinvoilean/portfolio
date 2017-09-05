@@ -110,10 +110,10 @@
 
   .stickyHeader.is-active .is-active ~ & {
     height: 200vh;
-    width: 100vh;
+    width: 200vw;
     right: -50vw;
     top: -50vh;
-    background-color: rgba($pure-black, 1)
+    background-color: rgba($pure-black, 1);
   }
 }
 
@@ -149,5 +149,12 @@
     transition: none;
     height: auto;
     width: auto;
+  }
+}
+
+// ACTIVE STICKY HEADER
+.stickyHeader.is-active {
+  .mainmenu {
+    margin-top: 7px;
   }
 }

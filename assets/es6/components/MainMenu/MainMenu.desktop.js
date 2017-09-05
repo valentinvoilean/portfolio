@@ -4,7 +4,7 @@ export default class MainMenu {
   }
 
   init() {
-    console.log('main menu desktop');
+    // console.log('main menu desktop');
   }
 
   destroy() {}

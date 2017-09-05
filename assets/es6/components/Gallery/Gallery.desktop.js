@@ -4,7 +4,7 @@ export default class GalleryDesktop {
   }
 
   init() {
-    console.log('gallery desktop');
+    // console.log('gallery desktop');
   }
 
   destroy() {}
