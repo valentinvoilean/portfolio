@@ -3,9 +3,7 @@ export default class GalleryDesktop {
     this.init();
   }
 
-  init() {
-    // console.log('gallery desktop');
-  }
+  init() {}
 
   destroy() {}
 }

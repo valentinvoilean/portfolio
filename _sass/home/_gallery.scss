@@ -5,6 +5,10 @@
   overflow: hidden;
   position: relative;
 
+  @include susy-breakpoint($bmd) {
+    background: url(../img/cetate_big.jpg) no-repeat fixed 50% 50%/cover;
+  }
+
   &:after {
     position: absolute;
     left: 0;
@@ -24,10 +28,6 @@
   transform: translate(-50%, -10vh);
 
   @include susy-breakpoint($bmd) {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: static;
-    transform: none;
+    display: none;
   }
 }
