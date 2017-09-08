@@ -17,9 +17,17 @@
 }
 
 .home-gallery-image {
-  height: 120vh;
+  height: 130vh;
   width: auto;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -10vh);
+
+  @include susy-breakpoint($bmd) {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: static;
+    transform: none;
+  }
 }
