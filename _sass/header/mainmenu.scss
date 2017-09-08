@@ -109,11 +109,21 @@
   }
 
   .stickyHeader.is-active .is-active ~ & {
-    height: 200vh;
-    width: 200vw;
-    right: -50vw;
-    top: -50vh;
     background-color: rgba($pure-black, 1);
+
+    @media screen and (orientation:portrait) {
+      height: 200vh;
+      width: 200vh;
+      right: -100vh;
+      top: -50vh;
+    }
+
+    @media screen and (orientation:landscape) {
+      height: 200vw;
+      width: 200vw;
+      right: -50vw;
+      top: -100vw;
+    }
   }
 }
 

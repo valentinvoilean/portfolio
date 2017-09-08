@@ -10,6 +10,7 @@ export default class CurrenciesComponent {
   }
 
   init() {
+    inView.offset(100);
     this._addEventListeners();
   }
 
@@ -17,7 +18,6 @@ export default class CurrenciesComponent {
   }
 
   _addEventListeners() {
-    inView.offset(100);
     inView(selectors.gallery).on('exit', $.proxy(this._highlightHeader, this));
     inView(selectors.gallery).on('enter', $.proxy(this._resetHeader, this));
   }
