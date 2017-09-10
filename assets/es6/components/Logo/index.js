@@ -32,7 +32,7 @@ export default class Logo {
   }
 
   _addEventListeners() {
-    if (hasTouch) {
+    if (!hasTouch) {
       this.$logo.on('click', $.proxy(this._toggleLogoActivation, this));
       $(document).on('click', $.proxy(this._deactivateLogo, this));
     } else {
@@ -57,13 +57,14 @@ export default class Logo {
       e.preventDefault();
       this._activateLogo();
     }
+
+    this.state.active = !this.state.active;
   }
 
   _activateLogo() {
     const { enter, leave } = classNames;
 
     this.$logo.addClass(enter).removeClass(leave);
-    this.state.active = true;
   }
 
   _deactivateLogo() {
@@ -71,10 +72,9 @@ export default class Logo {
 
     this.$logo.addClass(leave).removeClass(enter);
 
-    this.state.active = false;
-
     setTimeout(() => {
       this.$logo.removeClass(leave);
+      this.state.active = false;
     }, 600);
   }
 }

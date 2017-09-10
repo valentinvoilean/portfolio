@@ -1,6 +1,4 @@
 .logo {
-  height: 35px;
-  width: 35px;
   color: $pure-white;
   margin-top: 20px;
   margin-left: 30px;
@@ -8,10 +6,9 @@
   position: relative;
   opacity: 0.8;
   cursor: pointer;
+  display: block;
 
   @include susy-breakpoint($bsm) {
-    height: 45px;
-    width: 45px;
     margin-top: 25px;
     margin-left: 50px;
   }
@@ -39,9 +36,13 @@
 .logo-first-letter {
   font-size: 30px;
   line-height: 38px;
+  width: 35px;
+  text-align: center;
+  display: inline-block;
 
   @include susy-breakpoint($bsm) {
     line-height: 50px;
+    width: 45px;
   }
 }
 
@@ -144,6 +145,7 @@
   }
 
   .logo-first-letter {
+    width: 30px;
     font-size: 23px;
     line-height: 34px;
   }
