@@ -57,20 +57,21 @@ export default class Logo {
       e.preventDefault();
       this._activateLogo();
     }
-
-    this.state.active = !this.state.active;
   }
 
   _activateLogo() {
     const { enter, leave } = classNames;
 
     this.$logo.addClass(enter).removeClass(leave);
+    this.state.active = true;
   }
 
   _deactivateLogo() {
     const { enter, leave } = classNames;
 
     this.$logo.addClass(leave).removeClass(enter);
+
+    this.state.active = false;
 
     setTimeout(() => {
       this.$logo.removeClass(leave);
