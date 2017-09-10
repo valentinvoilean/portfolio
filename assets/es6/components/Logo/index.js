@@ -32,8 +32,6 @@ export default class Logo {
   }
 
   _addEventListeners() {
-    console.log(hasTouch);
-
     if (hasTouch) {
       this.$logo.on('click', $.proxy(this._toggleLogoActivation, this));
       $(document).on('click', $.proxy(this._deactivateLogo, this));
