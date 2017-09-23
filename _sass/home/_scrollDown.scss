@@ -14,10 +14,6 @@
   animation-iteration-count: infinite;
   animation-fill-mode:both;
   animation-duration:2s;
-
-  @include susy-breakpoint($bmd) {
-    top: 85vh;
-  }
 }
 
 .scrollDown-txt {
