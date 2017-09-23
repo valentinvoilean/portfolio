@@ -6,7 +6,7 @@
 
 .scrollDown {
   position: absolute;
-  top: 85vh;
+  top: 65vh;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
@@ -14,6 +14,10 @@
   animation-iteration-count: infinite;
   animation-fill-mode:both;
   animation-duration:2s;
+
+  @include susy-breakpoint($bmd) {
+    top: 85vh;
+  }
 }
 
 .scrollDown-txt {
