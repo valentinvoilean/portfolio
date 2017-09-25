@@ -3,8 +3,9 @@ import MainMenu from './MainMenu';
 import MediaQueries from './MediaQueries';
 import Gallery from './Gallery';
 import StickyHeader from './StickyHeader';
+import AnimatedMessage from './AnimatedMessage';
 
 export default {
-  documentReady: [MediaQueries, Logo, MainMenu, Gallery, StickyHeader],
-  windowLoad: []
+  documentReady: [MediaQueries],
+  windowLoad: [Logo, MainMenu, StickyHeader, Gallery, AnimatedMessage]
 };
