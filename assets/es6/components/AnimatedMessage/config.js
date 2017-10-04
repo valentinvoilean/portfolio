@@ -5,7 +5,7 @@ export const classNames = {
 };
 
 export const options = {
-  strings: ['I\'m Valentin. ^1000', 'I\'m from Romania. ^500', 'I\'m Frontend Developer. ^5000'],
+  strings: ['Hi! ^500', 'I\'m Valentin. ^1000', 'I\'m Web Developer. ^5000'],
   typeSpeed: 30,
   backSpeed: 40,
   startDelay: 1000,
